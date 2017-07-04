@@ -1,0 +1,59 @@
+D:/J2EE/apache-tomcat-6.0.18/webapps/ExplanatoryOM/WebRoot/ES_MODEL\NNBiGRNNCharLabeler.exe -test D:\J2EE\apache-tomcat-6.0.18\webapps\ExplanatoryOM\phone\corpus\phone_test.txt -model /D:/J2EE/apache-tomcat-6.0.18/webapps/ExplanatoryOM/ES_MODEL\phone\model\model -output /D:/J2EE/apache-tomcat-6.0.18/webapps/ExplanatoryOM/ES_MODEL\phone\output\phone.output > /D:/J2EE/apache-tomcat-6.0.18/webapps/ExplanatoryOM/ES_MODEL\phone\log\log.test
+
+
+D:/J2EE/apache-tomcat-6.0.18/webapps/ExplanatoryOM/ES_MODEL\NNBiGRNNCharLabeler.exe -test D:\J2EE\apache-tomcat-6.0.18\webapps\ExplanatoryOM\ES_MODEL\phone\corpus\phone_test.txt -model D:\J2EE\apache-tomcat-6.0.18\webapps\ExplanatoryOM\ES_MODEL\phone\model\model -output D:\J2EE\apache-tomcat-6.0.18\webapps\ExplanatoryOM\ES_MODEL\phone\output\phone.output > D:\J2EE\apache-tomcat-6.0.18\webapps\ExplanatoryOM\ES_MODEL\phone\log\log.test
+
+
+cmake .. -DEIGEN3_INCLUDE_DIR=D:\vs_workspace\eigen -DN3L_INCLUDE_DIR=D:\vs_workspace\LibN3L-2.0
+
+cmake .. -DEIGEN3_INCLUDE_DIR=/home/hzj/Segment/eigen -DN3L_INCLUDE_DIR=/home/hzj/Segment/LibN3L-2.0
+
+cmake .. -DEIGEN3_INCLUDE_DIR=/c/eigen/ -DN3L_INCLUDE_DIR=/d/github/LibN3L-2.0/
+
+-l -train D:\ACL2016\ACL2016-Segmentation\experiment-v1\ctb60\train.ctb60.seg -dev D:\ACL2016\ACL2016-Segmentation\experiment-v1\ctb60\train.ctb60.seg -test D:\ACL2016\ACL2016-Segmentation\experiment-v1\ctb60\test.ctb60.seg -option D:\ACL2016\ACL2016-Segmentation\experiment-v1\option.debug
+-l -train D:\ACL2016\ACL2016-Segmentation\experiment-v1\ctb60\train.ctb60.seg -dev D:\ACL2016\ACL2016-Segmentation\experiment-v1\ctb60\dev.ctb60.seg -test D:\ACL2016\ACL2016-Segmentation\experiment-v1\ctb60\test.ctb60.seg -option D:\ACL2016\ACL2016-Segmentation\experiment-v1\option.debug
+
+NNSEG/bin/NNSegmentor -l -train seg_data/data/corpus/train.ctb60.seg.hwc -dev seg_data/data/corpus/dev.ctb60.seg.hwc -test D:\ACL2016\ACL2016-Segmentation\experiment-v1\ctb60\test.ctb60.seg -option D:\ACL2016\ACL2016-Segmentation\experiment-v1\option.debug
+-l -train D:\ACL2016\ACL2016-Segmentation\experiment-v1\ctb60\train.ctb60.seg -dev D:\ACL2016\ACL2016-Segmentation\experiment-v1\ctb60\dev.ctb60.seg -test D:\ACL2016\ACL2016-Segmentation\experiment-v1\ctb60\test.ctb60.seg -option D:\ACL2016\ACL2016-Segmentation\experiment-v1\option.debug
+
+
+
+ -l -train Experiments/data/corpus/test.ctb60.seg.hwc -dev Experiments/data/corpus/test.ctb60.seg.hwc -test Experiments/data/corpus/test.ctb60.seg -model ../model/model -option ../option/option.save > ../log/log 2>&1 &
+
+
+
+
+
+
+
+
+
+
+///linux Cmake  在build文件夹里
+cmake .. -DEIGEN3_INCLUDE_DIR=/home/hzj/Segment/eigen/ -DN3L_INCLUDE_DIR=/home/hzj/Segment/LibN3L-2.0/
+
+then  make + NNSegmentor1
+
+///路径
+D:\vs_workspace\NNTranSegmentor-master
+///参数
+///训练
+-l -train Experiments/data/corpus/test.ctb60.seg.hwc -dev Experiments/data/corpus/test.ctb60.seg.hwc -test Experiments/data/corpus/test.ctb60.seg.hwc -model Experiments/model/model -option Experiments/option/option.save > Experiments/log/log
+
+///测试
+-test Experiments/data/corpus/test.ctb60.seg.hwc -model Experiments/model/model -option Experiments/option/option.save > Experiments/log/log1
+
+
+
+
+
+
+///linux 挂起
+
+nohup ../../bin/CombinedSegmentor -l -train ../data/corpus/train.ctb60.seg.hwc -dev ../data/corpus/dev.ctb60.seg.hwc -test ../data/corpus/test.ctb60.seg.hwc -model ../model/model -option ../option/option.save > ../log/log 2>&1 &
+
+/// linux 挂起测试
+nohup ../../bin/NNSegmentor1 -test ../data/seg_data/data/corpus/test.ctb60.seg.hwc -model ../model/model -option ../option/option.save > ../log/log1 2>&1 &
+
+///linux 文件复制
+scp -r /home/hzj/Segment 138.138.0.112:/home/hzj/
